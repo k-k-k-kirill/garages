@@ -3,15 +3,14 @@
 namespace App\Services;
 
 use App\Models\Garage as GarageModel;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
 
 class Garage
 {
   private $garageModel;
 
-  public function __construct()
+  public function __construct(GarageModel $garageModel)
   {
-    $this->garageModel = new GarageModel();
+    $this->garageModel = $garageModel;
   }
 
   public function getAllGarages(): string
